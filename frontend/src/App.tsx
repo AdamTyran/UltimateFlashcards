@@ -1,9 +1,19 @@
-import React from "react";
+import { useState } from "react";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    console.log(darkMode);
+  };
+
   return (
-    <div className="h-screen w-screen bg-gradient-to-tr from-green-700 via-green-800 to-green-900">
-      <div className="h-14 bg-gradient-to-tr from-violet-700 via-violet-800 to-violet-950"></div>
+    <div className={`${darkMode && "dark"}`}>
+      <div className="h-screen w-screen bg-white dark:bg-gray-700">
+        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      </div>
     </div>
   );
 }
