@@ -4,7 +4,7 @@ import Home from "../home/Home";
 
 const Main = () => {
   return (
-    <div>
+    <div className="h-1/2 flex flex-grow items-center justify-center">
       <Routes>
         <Route path="/" element={<Home />}></Route>
       </Routes>

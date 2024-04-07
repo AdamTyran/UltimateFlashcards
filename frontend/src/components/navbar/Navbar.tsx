@@ -21,12 +21,13 @@ const Navbar = ({ darkMode, toggleDarkMode }: Props) => {
       <div className="flex mx-auto text-center gap-2 z-10">
         {NavbarButtons.map((item) => (
           <div key={item.id}>
-            <button
+            <Link
+              to={item.path}
               //className="h-12 rounded-md border-4 text-black dark:text-white uppercase border-neutral-500 p-2 font-bold transition-colors before:bg-neutral-300 before:top-0 before:left-0 before:scale-x-0 before:transition-transform before:duration-300 before:content-[''] hover:bg-neutral-500 before:hover:scale-x-100">
               className="relative border-2 border-neutral-500 bg-transparent py-2.5 px-5 font-medium uppercase text-black dark:text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-neutral-600 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100"
             >
               {item.name}
-            </button>
+            </Link>
           </div>
         ))}
       </div>
