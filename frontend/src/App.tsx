@@ -12,9 +12,11 @@ function App() {
 
   return (
     <div className={`${darkMode && "dark"}`}>
-      <div className="h-screen w-screen bg-white dark:bg-gray-700">
+      <div className="flex flex-col h-screen w-screen bg-white dark:bg-gray-700">
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <Main />
+        <div className="flex-1">
+          <Main />
+        </div>
       </div>
     </div>
   );
