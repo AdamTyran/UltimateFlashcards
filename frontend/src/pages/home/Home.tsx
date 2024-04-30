@@ -1,6 +1,6 @@
 import React from "react";
 import Text from "../../components/text/Text";
-import CollectionContainer from "../../components/collection-container/CollectionContainer";
+import CollectionCard from "../../components/collection-card/CollectionCard";
 
 const Home = () => {
   const displayedText = "What do you want to learn today?";
@@ -11,13 +11,13 @@ const Home = () => {
         <Text displayedText={displayedText} />
       </div>
       <div className="flex flex-row items-center justify-center gap-5">
-        <CollectionContainer />
+        <CollectionCard />
       </div>
       <div className="flex flex-row items-center justify-center gap-5">
-        <CollectionContainer />
+        <CollectionCard />
       </div>
       <div className="flex flex-row items-center justify-center gap-5">
-        <CollectionContainer />
+        <CollectionCard />
       </div>
     </div>
   );
