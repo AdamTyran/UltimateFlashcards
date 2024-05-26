@@ -4,16 +4,16 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NavbarButtons from "../../utils/navbar-buttons";
 import { Link } from "react-router-dom";
 
-interface Props {
+interface NavbarProps {
   darkMode: boolean;
   toggleDarkMode(): void;
 }
 
-const Navbar = ({ darkMode, toggleDarkMode }: Props) => {
+const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   return (
     <nav className="flex items-center justify-between h-14 bg-neutral-300 dark:bg-gray-800 shadow">
       <button
-        className="ml-2 h-10 w-10 rounded-full bg-gray-600  dark:bg-neutral-300"
+        className="ml-2 h-10 w-10 rounded-full bg-gray-600 dark:bg-neutral-300"
         onClick={toggleDarkMode}
       >
         {darkMode ? <LightModeOutlinedIcon /> : <Brightness3OutlinedIcon />}

@@ -6,12 +6,12 @@ interface Props {
 }
 
 const Text = ({ displayedText, delay = 100 }: Props) => {
-  const [textCount, setTextCount] = useState(0);
+  const [textCounter, setTextCounter] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval>>();
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
-      setTextCount((prev) => prev + 1);
+      setTextCounter((prev) => prev + 1);
     }, delay);
     return () => {
       clearInterval(intervalRef.current);
@@ -19,11 +19,11 @@ const Text = ({ displayedText, delay = 100 }: Props) => {
   }, [delay]);
 
   useEffect(() => {
-    if (textCount > displayedText.length - 1) {
+    if (textCounter > displayedText.length - 1) {
       clearInterval(intervalRef.current);
     }
-  }, [displayedText.length, textCount]);
-  return <div>{displayedText.slice(0, textCount)}</div>;
+  }, [displayedText.length, textCounter]);
+  return <div>{displayedText.slice(0, textCounter)}</div>;
 };
 
 export default Text;
