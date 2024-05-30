@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import { SetsController } from "./controllers/sets/sets.controller";
+import router from "./routes/index.routes";
 
 dotenv.config();
 
@@ -10,7 +10,7 @@ const PORT = process.env.BACKEND_PORT;
 
 app.use(express.json());
 app.use(cors());
-app.get("/sets", SetsController.getSets);
+app.get("/api", router);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
