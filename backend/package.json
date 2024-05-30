@@ -5,7 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.ts"
+    "start": "nodemon src/index.ts",
+    "migrate": "knex migrate:latest --migrations-directory src/db/migrations  --knexfile knexfile.ts"
   },
   "author": "",
   "license": "ISC",
@@ -19,8 +20,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
     "knex": "^3.1.0",
-    "pg": "^8.11.3",
-    "ts-node": "^10.9.2",
-    "zod": "^3.24.0-canary.20240523T174819"
+    "pg": "^8.11.5",
+    "ts-node": "^10.9.2"
   }
 }
